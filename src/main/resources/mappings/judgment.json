@@ -8,7 +8,7 @@
       "type": "nested",
       "properties": {
         "name": { "type": "keyword" },
-        "value": { "type": "object", "enabled": false }
+        "value": { "type": "text" }
       }
     },
     "judgmentRatings": {

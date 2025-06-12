@@ -144,14 +144,6 @@ public class PutJudgmentTransportAction extends HandledTransportAction<PutJudgme
                 Object name = item.get("name");
                 Object value = item.get("value");
                 if (name != null) {
-                    // Try to deserialize JSON strings back to objects
-                    if (value instanceof String && (((String) value).startsWith("[") || ((String) value).startsWith("{"))) {
-                        try {
-                            value = objectMapper.readValue((String) value, Object.class);
-                        } catch (Exception e) {
-                            // Keep as string if parsing fails
-                        }
-                    }
                     flatMap.put(name.toString(), value);
                 }
             }
